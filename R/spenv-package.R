@@ -1,6 +1,6 @@
 #' Spatial data to environmental data extractor
 #'
-#' @import rnoaa
+#' @import rnoaa lawn geojsonio
 #' @name spenv-package
 #' @aliases spenv
 #' @docType package

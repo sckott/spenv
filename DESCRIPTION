@@ -8,7 +8,9 @@ Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
 URL: https://github.com/sckott/spenv
 BugReports: https://github.com/sckott/spenv/issues
 Imports:
-    rnoaa
+    rnoaa,
+    geojsonio,
+    lawn
 Suggests:
     testthat
 RoxygenNote: 5.0.1

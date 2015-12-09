@@ -17,7 +17,16 @@ library("spenv")
 
 ## Examples
 
-code ...
+```{r}
+file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
+dat <- read.csv(file)
+head(dat)
+```
+
+```{r}
+res <- sp_mutate(x = dat[1:10,], radius = 100)
+res[[1]]
+```
 
 ## Meta
 
