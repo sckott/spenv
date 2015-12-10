@@ -74,6 +74,12 @@ Map it
 
 "map"
 
+## Contributors
+
+* Tom Webb
+* Samuel Bosch
+* Scott Chamberlain
+
 ## Meta
 
 * Please [report any issues or bugs](https://github.com/sckott/spenv/issues).
