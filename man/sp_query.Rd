@@ -4,18 +4,40 @@
 \alias{sp_query}
 \title{Explore what data is available}
 \usage{
-sp_query(query)
+sp_query(variable = NULL, source = NULL)
 }
 \arguments{
-\item{query}{Query terms}
+\item{variable}{Query for a variable}
+
+\item{source}{Query for a data source}
 }
 \description{
 Explore what data is available
 }
 \examples{
 \dontrun{
-sp_query(query = "precipitation")
-sp_query("temperature")
+# THESE DON'T ACTUALLY WORK YET...
+# Query by data variable
+sp_query(variable = "precipitation")
+sp_query(variable = "temperature")
+
+# Query by data variable
+sp_query(source = "noaa")
+
+# Query by spatial resolution
+sp_query(spatial_res = "noaa")
+
+# Query by temporal resolution
+sp_query(temporal_res = "weekly")
+
+# Query by spatial coverage
+sp_query(spatial_coverage = "global")
+
+# Query by temporal coverage
+sp_query(temporal_coverage = "1950:1970")
+
+# Query by license
+sp_query(license = "CC0")
 }
 }
 

@@ -7,6 +7,9 @@
 find_locs(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL, ...)
 }
 \arguments{
+\item{x}{The reference set of stations. This is in the case of point data, not
+gridded data}
+
 \item{lat, lon}{(numeric) Latitude and longitude, in decimal degree. One or
 more. The lat and lon vectors must be the same length.}
 

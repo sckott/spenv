@@ -1,6 +1,8 @@
 #' Find locations of stations/etc. from spatial inputs
 #'
 #' @export
+#' @param x The reference set of stations. This is in the case of point data, not
+#' gridded data
 #' @param lat,lon	(numeric) Latitude and longitude, in decimal degree. One or
 #' more. The lat and lon vectors must be the same length.
 #' @param radius (numeric) Radius (in km) to search from the lat,lon coordinates
