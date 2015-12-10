@@ -9,8 +9,10 @@ See the [Wiki](https://github.com/sckott/spenv/wiki) for some documentation.
 
 Package API:
 
-* `sp_mutate` - get env data for occ data input
-* `sp_query` - query for env data
+* `sp_mutate` - get env data for occ data input - not ready yet
+* `sp_extract_gridded` - extract env gridded data
+* `sp_extract_pt` - extract env point data
+* `sp_query` - query for env data - not ready yet
 * `find_locs` - find locations/stations/etc. based on occ data input - internal fxn used in `sp_mutate`
 
 ## Install
