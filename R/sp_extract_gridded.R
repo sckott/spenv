@@ -10,7 +10,6 @@
 #' @details Works for the use case of finding locations for point based stations,
 #' floats/buoys type data
 #' @examples \dontrun{
-#' # get occurrence data
 #' library("spocc")
 #' res <- occ(query = 'Mola mola', from = 'obis', limit = 200)
 #' res_df <- occ2df(res)

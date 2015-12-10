@@ -38,15 +38,17 @@ res[[1]]
 
 ## Example: gridded env data
 
-```{r eval=FALSE}
-file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
-dat <- read.csv(file)
+```{r}
+library("spocc")
+res <- occ(query = 'Mola mola', from = 'obis', limit = 200)
+res_df <- occ2df(res)
+out <- sp_extract_gridded(res_df)
+head(out)
 ```
 
-```{r eval=FALSE}
-res <- sp_extract_gridded(x = dat[1:10,], radius = 100)
-res[[1]]
-```
+Map it
+
+"map"
 
 ## Meta
 
