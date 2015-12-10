@@ -23,7 +23,7 @@ devtools::install_github("ropensci/spenv")
 library("spenv")
 ```
 
-## Examples
+## Example: pt env data
 
 ```{r eval=FALSE}
 file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
@@ -32,7 +32,19 @@ head(dat)
 ```
 
 ```{r eval=FALSE}
-res <- sp_mutate(x = dat[1:10,], radius = 100)
+res <- sp_extract_pt(x = dat[1:10,], radius = 100)
+res[[1]]
+```
+
+## Example: gridded env data
+
+```{r eval=FALSE}
+file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
+dat <- read.csv(file)
+```
+
+```{r eval=FALSE}
+res <- sp_extract_gridded(x = dat[1:10,], radius = 100)
 res[[1]]
 ```
 

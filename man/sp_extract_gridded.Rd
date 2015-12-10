@@ -4,11 +4,20 @@
 \alias{sp_extract_gridded}
 \title{Extract environmental data - gridded data based}
 \usage{
-sp_extract_gridded(x, from = "noaa_sst", radius = 50, select = "first",
-  date = NULL)
+sp_extract_gridded(x, from = "noaa_sst", latitude = NULL,
+  longitude = NULL, origin = as.Date("1800-1-1"))
 }
 \arguments{
 \item{x}{input data.frame}
+
+\item{from}{Data source, only noaa_sst for now, from
+http://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html}
+
+\item{latitude}{Latitude variable name}
+
+\item{longitude}{Longitude variable name}
+
+\item{origin}{Date origin, Default: 1800-1-1}
 }
 \description{
 Extract environmental data - gridded data based
@@ -19,10 +28,16 @@ floats/buoys type data
 }
 \examples{
 \dontrun{
-file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
-dat <- read.csv(file)
-head(dat)
-res <- sp_extract_gridded(x = dat[1:10,], radius = 20)
+# get occurrence data
+library("spocc")
+res <- occ(query = 'Mola mola', from = 'obis', limit = 200)
+res_df <- occ2df(res)
+sp_extract_gridded(x=res_df)
+
+# pass in lat/lon variable names if needed
+names(res_df)[2] <- "mylong"
+head(res_df)
+sp_extract_gridded(res_df, latitude = "latitude", longitude = "mylong")
 }
 }
 

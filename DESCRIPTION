@@ -1,7 +1,7 @@
 Package: spenv
 Title: Add Environmental Data to Spatial Data
 Description: Add Environmental Data to Spatial Data. Stuff.
-Version: 0.0.2.9320
+Version: 0.0.2.9600
 License: MIT + file LICENSE
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"), email = "myrmecocystus@gmail.com"),
     person("Tom", "Webb", role = "aut"),
