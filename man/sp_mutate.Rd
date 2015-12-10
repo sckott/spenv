@@ -19,7 +19,7 @@ file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
 dat <- read.csv(file)
 head(dat)
 
-res <- sp_mutate(x = dat[1:10,], radius = 100)
+res <- sp_mutate(x = dat[1:10,], radius = 20)
 
 }
 }

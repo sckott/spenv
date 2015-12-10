@@ -1,7 +1,7 @@
 Package: spenv
 Title: Add Environmental Data to Spatial Data
 Description: Add Environmental Data to Spatial Data. Stuff.
-Version: 0.0.1.9400
+Version: 0.0.2.9000
 License: MIT + file LICENSE
 Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com")
@@ -9,8 +9,9 @@ URL: https://github.com/sckott/spenv
 BugReports: https://github.com/sckott/spenv/issues
 Imports:
     rnoaa,
-    geojsonio,
-    lawn
+    sp,
+    rgeos,
+    lubridate
 Suggests:
     testthat
 RoxygenNote: 5.0.1

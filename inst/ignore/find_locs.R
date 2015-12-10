@@ -1,6 +1,5 @@
 #' Find locations of stations/etc. from spatial inputs
 #'
-#' @export
 #' @param x The reference set of stations. This is in the case of point data, not
 #' gridded data
 #' @param lat,lon	(numeric) Latitude and longitude, in decimal degree. One or

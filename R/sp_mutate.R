@@ -7,7 +7,7 @@
 #' dat <- read.csv(file)
 #' head(dat)
 #'
-#' res <- sp_mutate(x = dat[1:10,], radius = 100)
+#' res <- sp_mutate(x = dat[1:10,], radius = 20)
 #'
 #' }
 sp_mutate <- function(x, from = "noaa_isd", radius = 50, select = "first",
@@ -21,10 +21,9 @@ sp_mutate <- function(x, from = "noaa_isd", radius = 50, select = "first",
          if (is.null(x)) {
            NULL
          } else {
-           us <- x[1,]
            if (is.null(date)) {
              # use latest date if user doesn't give
-             date <- strsplit(as.character(as.Date(x[1, "end"], "%Y%m%d")), "-")[[1]][[1]]
+             date <- year(ymd(x[1, "end"]))
            }
            isd(x[1, 'usaf'], x[1, 'wban'], date)
          }
