@@ -8,8 +8,5 @@
 \description{
 Spatial data to environmental data extractor
 }
-\author{
-Scott Chamberlain \email{myrmecocystus@gmail.com}
-}
 \keyword{package}
 

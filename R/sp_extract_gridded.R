@@ -10,11 +10,11 @@
 #' head(dat)
 #' res <- sp_extract_gridded(x = dat[1:10,], radius = 20)
 #' }
-sp_extract_gridded <- function(x, from = "noaa_isd", radius = 50, select = "first",
+sp_extract_gridded <- function(x, from = "noaa_sst", radius = 50, select = "first",
                           date = NULL) {
 
   switch(from,
-     noaa_isd = {
+     noaa_sst = {
        isdstat <- rnoaa::isd_stations()
        tmp <- find_locs(isdstat, lat = x$latitude, lon = x$longitude, radius = radius)
        lapply(tmp, function(x) {

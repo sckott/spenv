@@ -4,7 +4,7 @@
 \alias{sp_extract_gridded}
 \title{Extract environmental data - gridded data based}
 \usage{
-sp_extract_gridded(x, from = "noaa_isd", radius = 50, select = "first",
+sp_extract_gridded(x, from = "noaa_sst", radius = 50, select = "first",
   date = NULL)
 }
 \arguments{
