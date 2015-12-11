@@ -9,6 +9,7 @@
 #' @param origin Date origin, Default: 1800-1-1
 #' @details Works for the use case of finding locations for point based stations,
 #' floats/buoys type data
+#' @author Tom Webb, Scott Chamberlain
 #' @examples \dontrun{
 #' library("spocc")
 #' res <- occ(query = 'Mola mola', from = 'obis', limit = 200)

@@ -4,6 +4,7 @@
 #' @param x input data.frame
 #' @details Works for the use case of finding locations for point based stations,
 #' floats/buoys type data
+#' @author Scott Chamberlain
 #' @examples \dontrun{
 #' file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
 #' dat <- read.csv(file)

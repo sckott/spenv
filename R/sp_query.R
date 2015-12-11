@@ -3,6 +3,7 @@
 #' @export
 #' @param variable Query for a variable
 #' @param source Query for a data source
+#' @author Scott Chamberlain
 #' @examples \dontrun{
 #' # THESE DON'T ACTUALLY WORK YET...
 #' # Query by data variable
