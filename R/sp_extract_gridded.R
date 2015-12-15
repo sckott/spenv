@@ -32,7 +32,8 @@ sp_extract_gridded <- function(x, from = "noaa_sst", latitude = NULL,
        x <- x[ !is.na(x$date), ]
        x$date <- as.Date(x$date)
        x <- x[x$date >= min(mb@z[["Date"]]), ]
-       x$lon_adj <- x$longitude + 180
+       x$lon_adj <- x$longitude
+       x$lon_adj[x$lon_adj < 0] <- x$lon_adj[x$lon_adj < 0] + 360
        for (i in seq_len(NROW(x))) {
          out[[i]] <- get_env_par_space_x_time(mb, x[i, ], origin = origin)
        }
