@@ -1,11 +1,11 @@
 spenv
 =====
 
-[![Build Status](https://travis-ci.org/sckott/spenv.svg)](https://travis-ci.org/sckott/spenv)
+[![Build Status](https://travis-ci.org/ropenscilabs/spenv.svg)](https://travis-ci.org/ropenscilabs/spenv)
 
 `spenv` - add environmental data to spatial data
 
-See the [Wiki](https://github.com/sckott/spenv/wiki) for some documentation.
+See the [Wiki](https://github.com/ropenscilabs/spenv/wiki) for some documentation.
 
 Package API:
 
@@ -19,7 +19,7 @@ Package API:
 
 
 ```r
-devtools::install_github("ropensci/spenv")
+devtools::install_github("ropenscilabs/spenv")
 ```
 
 
@@ -54,6 +54,7 @@ out <- sp_extract_gridded(res_df)
 
 ```
 ## Assuming 'longitude' and 'latitude' are longitude and latitude, respectively
+## Loading required namespace: ncdf4
 ```
 
 ```r
@@ -82,5 +83,5 @@ Map it
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/sckott/spenv/issues).
+* Please [report any issues or bugs](https://github.com/ropenscilabs/spenv/issues).
 * License: MIT
