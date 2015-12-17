@@ -6,8 +6,8 @@ License: MIT + file LICENSE
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"), email = "myrmecocystus@gmail.com"),
     person("Tom", "Webb", role = "aut"),
     person("Samuel", "Bosch", role = "aut"))
-URL: https://github.com/sckott/spenv
-BugReports: https://github.com/sckott/spenv/issues
+URL: https://github.com/ropenscilabs/spenv
+BugReports: https://github.com/ropenscilabs/spenv/issues
 Imports:
     rnoaa,
     sp,
