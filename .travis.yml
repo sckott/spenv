@@ -11,9 +11,6 @@ before_script:
   - ./travis-tool.sh bootstrap
   - ./travis-tool.sh install_deps
 
-after_failure:
-  - ./travis-tool.sh dump_logs
-
 env:
    global:
      - R_LIBS="http://cran.rstudio.com"
