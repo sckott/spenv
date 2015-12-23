@@ -2,7 +2,7 @@
 #'
 #' @import sp rgeos raster
 #' @importFrom lubridate year ymd
-#' @importFrom rnoaa isd_stations
+#' @importFrom rnoaa isd_stations isd
 #' @name spenv-package
 #' @aliases spenv
 #' @docType package

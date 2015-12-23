@@ -9,6 +9,14 @@ sp_extract_pt(x, from = "noaa_isd", radius = 50, select = "first",
 }
 \arguments{
 \item{x}{input data.frame}
+
+\item{from}{which data source, only 'noaa_isd' for now}
+
+\item{radius}{radius, in km}
+
+\item{select}{which}
+
+\item{date}{Date}
 }
 \description{
 Extract environmental data - pt based

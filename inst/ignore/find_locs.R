@@ -52,15 +52,6 @@ find_locs <- function(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL,
   #                        tmp$geometry$coordinates), c("lon", "lat")))
 }
 
-clean_spdf <- function(x) {
-  df <- x[complete.cases(x$lat, x$lon), ]
-  df <- df[abs(df$lat) <= 90, ]
-  df <- df[abs(df$lon) <= 180, ]
-  df <- df[df$lat != 0, ]
-  row.names(df) <- NULL
-  df
-}
-
 clip_points <- function(x, pts) {
   outout <- lawn::lawn_within(pts, x)
   tmp <- outout$features

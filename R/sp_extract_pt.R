@@ -2,6 +2,10 @@
 #'
 #' @export
 #' @param x input data.frame
+#' @param from which data source, only 'noaa_isd' for now
+#' @param radius radius, in km
+#' @param select which
+#' @param date Date
 #' @details Works for the use case of finding locations for point based stations,
 #' floats/buoys type data
 #' @author Scott Chamberlain
@@ -26,7 +30,7 @@ sp_extract_pt <- function(x, from = "noaa_isd", radius = 50, select = "first",
              # use latest date if user doesn't give
              date <- year(ymd(x[1, "end"]))
            }
-           isd(x[1, 'usaf'], x[1, 'wban'], date)
+           rnoaa::isd(x[1, 'usaf'], x[1, 'wban'], date)
          }
        })
      })

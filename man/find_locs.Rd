@@ -4,7 +4,7 @@
 \alias{find_locs}
 \title{Find locations of stations/etc. from spatial inputs}
 \usage{
-find_locs(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL, ...)
+find_locs(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL)
 }
 \arguments{
 \item{x}{The reference set of stations. This is in the case of point data, not

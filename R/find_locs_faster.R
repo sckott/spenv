@@ -17,7 +17,7 @@
 #' x <- rnoaa::isd_stations()
 #' find_locs(x, lat = c(30, 40), lon = c(-120, -120), radius = 50)
 #' }
-find_locs <- function(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL, ...) {
+find_locs <- function(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL) {
 
   check4pkg("sp")
   check4pkg("rgeos")
@@ -38,7 +38,7 @@ find_locs <- function(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL, ...
 }
 
 # buffer a point
-buffer_pt <- function(lon, lat, width) {
+buffer_pt <- function(lon, lat, radius) {
   spt <- sp::SpatialPoints(cbind(lon, lat))
   sp::proj4string(spt) <- sp::CRS("+init=epsg:3395")
   rgeos::gBuffer(spt, width = radius)
@@ -51,4 +51,13 @@ clip_points2 <- function(pt, refdat, orig) {
   } else {
     orig[tmp,]
   }
+}
+
+clean_spdf <- function(x) {
+  df <- x[complete.cases(x$lat, x$lon), ]
+  df <- df[abs(df$lat) <= 90, ]
+  df <- df[abs(df$lon) <= 180, ]
+  df <- df[df$lat != 0, ]
+  row.names(df) <- NULL
+  df
 }
