@@ -23,8 +23,8 @@ find_locs <- function(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL, ...
   check4pkg("rgeos")
 
   df2sp <- df <- clean_spdf(x)
-  coordinates(df2sp) <- ~lon + lat
-  proj4string(df2sp) <- CRS("+init=epsg:3395")
+  sp::coordinates(df2sp) <- ~lon + lat
+  sp::proj4string(df2sp) <- sp::CRS("+init=epsg:3395")
   df2sp <- as(df2sp, "SpatialPoints")
 
   # find matches
@@ -39,8 +39,8 @@ find_locs <- function(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL, ...
 
 # buffer a point
 buffer_pt <- function(lon, lat, width) {
-  spt <- SpatialPoints(cbind(lon, lat))
-  proj4string(spt) <- CRS("+init=epsg:3395")
+  spt <- sp::SpatialPoints(cbind(lon, lat))
+  sp::proj4string(spt) <- sp::CRS("+init=epsg:3395")
   rgeos::gBuffer(spt, width = radius)
 }
 

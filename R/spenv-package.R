@@ -1,7 +1,8 @@
 #' Spatial data to environmental data extractor
 #'
-#' @import rnoaa sp rgeos raster RNetCDF
+#' @import sp rgeos raster
 #' @importFrom lubridate year ymd
+#' @importFrom rnoaa isd_stations
 #' @name spenv-package
 #' @aliases spenv
 #' @docType package

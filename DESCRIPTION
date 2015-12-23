@@ -13,8 +13,7 @@ Imports:
     sp,
     rgeos,
     lubridate,
-    raster,
-    RNetCDF
+    raster
 Suggests:
     testthat
 RoxygenNote: 5.0.1
