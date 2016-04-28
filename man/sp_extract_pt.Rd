@@ -10,27 +10,44 @@ sp_extract_pt(x, from = "noaa_isd", radius = 50, select = "first",
 \arguments{
 \item{x}{input data.frame}
 
-\item{from}{which data source, only 'noaa_isd' for now}
+\item{from}{which data source, only 'noaa_isd' for now OR an object with data
+in it, including data.frame or SpatialPointsDataFrame}
 
-\item{radius}{radius, in km}
+\item{radius}{radius, in km, for which to search for stations/point locations
+from each input point in \code{x}}
 
-\item{select}{which}
+\item{select}{Ignored right now}
 
-\item{date}{Date}
+\item{date}{Date to search for data for. Ignored if you supply your own
+env data in \code{from}}
 }
 \description{
 Extract environmental data - pt based
 }
 \details{
 Works for the use case of finding locations for point based stations,
-floats/buoys type data
+e.g., floats/buoys type data
 }
 \examples{
 \dontrun{
 file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
-dat <- read.csv(file)
+dat <- read.csv(file, stringsAsFactors = FALSE)
 head(dat)
-res <- sp_extract_pt(x = dat[1:10,], radius = 20)
+
+# data.frame input
+res <- sp_extract_pt(x = dat[1:10,], radius = 10)
+dplyr::bind_rows(lapply(res, function(x) x$data))
+
+# spatial objects
+## SpatialPointsDataFrame - w/ NOAA remote data
+library("sp")
+coordinates(dat) <- ~longitude + latitude
+sp_extract_pt(dat, radius = 10)
+
+## SpatialPointsDataFrame - w/ data.frame
+file <- system.file("examples", "noaa_data.csv", package = "spenv")
+ref <- read.csv(file, stringsAsFactors = FALSE)
+sp_extract_pt(x = dat, from = ref, radius = 10)
 }
 }
 \author{

@@ -22,8 +22,9 @@ find_locs <- function(x, lat = NULL, lon = NULL, radius = NULL, bbox = NULL) {
   check4pkg("sp")
   check4pkg("rgeos")
 
+  x <- spenv_guess_latlon(x)
   df2sp <- df <- clean_spdf(x)
-  sp::coordinates(df2sp) <- ~lon + lat
+  sp::coordinates(df2sp) <- ~longitude + latitude
   sp::proj4string(df2sp) <- sp::CRS("+init=epsg:3395")
   df2sp <- as(df2sp, "SpatialPoints")
 
