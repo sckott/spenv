@@ -34,15 +34,15 @@ sp_query <- function(variable = NULL, source = NULL) {
   })
 }
 
-dsets <- list(
-  rnoaa_buoy = list(
-    pkg = "rnoaa",
-    fxn = "buoy",
-    data = c("precipitation")
-  ),
-  rnoaa_gefs = list(
-    pkg = "rnoaa",
-    fxn = "gefs",
-    data = rnoaa::gefs_variables()
-  )
-)
+# dsets <- list(
+#   rnoaa_buoy = list(
+#     pkg = "rnoaa",
+#     fxn = "buoy",
+#     data = c("precipitation")
+#   ),
+#   rnoaa_gefs = list(
+#     pkg = "rnoaa",
+#     fxn = "gefs",
+#     data = rnoaa::gefs_variables()
+#   )
+# )
