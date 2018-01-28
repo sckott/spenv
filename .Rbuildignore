@@ -3,3 +3,4 @@
 ^README.Rmd$
 ^\.travis.yml$
 inst/examples/sst.mnmean.nc
+^codemeta\.json$
