@@ -2,3 +2,4 @@
 .Rhistory
 .RData
 inst/examples/sst.mnmean.nc
+*.Rproj
