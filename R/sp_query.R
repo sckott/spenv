@@ -1,4 +1,6 @@
 #' Explore what data is available
+#' 
+#' THIS FUNCTION DOESN'T WORK YET
 #'
 #' @export
 #' @param variable Query for a variable
@@ -29,9 +31,10 @@
 #' sp_query(license = "CC0")
 #' }
 sp_query <- function(variable = NULL, source = NULL) {
-  lapply(dsets, function(z) {
-    agrep(variable, z$data, value = TRUE)
-  })
+  stop("function doesn't work yet", call. = FALSE)
+  # lapply(dsets, function(z) {
+  #   agrep(variable, z$data, value = TRUE)
+  # })
 }
 
 # dsets <- list(
