@@ -2,11 +2,10 @@
 % Please edit documentation in R/spenv-package.R
 \docType{package}
 \name{spenv-package}
-\alias{spenv}
 \alias{spenv-package}
+\alias{spenv}
 \title{Spatial data to environmental data extractor}
 \description{
 Spatial data to environmental data extractor
 }
 \keyword{package}
-

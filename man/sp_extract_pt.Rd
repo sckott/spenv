@@ -4,8 +4,7 @@
 \alias{sp_extract_pt}
 \title{Extract environmental data - pt based}
 \usage{
-sp_extract_pt(x, from = "noaa_isd", radius = 50, select = "first",
-  date = NULL)
+sp_extract_pt(x, from = "noaa_isd", radius = 50, select = "first", date = NULL)
 }
 \arguments{
 \item{x}{input data.frame}
@@ -53,4 +52,3 @@ sp_extract_pt(x = dat, from = ref, radius = 10)
 \author{
 Scott Chamberlain
 }
-

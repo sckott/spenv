@@ -4,8 +4,13 @@
 \alias{sp_extract_gridded}
 \title{Extract environmental data - gridded data based}
 \usage{
-sp_extract_gridded(x, from = "noaa_sst", latitude = NULL,
-  longitude = NULL, origin = as.Date("1800-1-1"))
+sp_extract_gridded(
+  x,
+  from = "noaa_sst",
+  latitude = NULL,
+  longitude = NULL,
+  origin = as.Date("1800-1-1")
+)
 }
 \arguments{
 \item{x}{input data.frame}
@@ -42,4 +47,3 @@ sp_extract_gridded(res_df, latitude = "latitude", longitude = "mylong")
 \author{
 Tom Webb, Scott Chamberlain
 }
-

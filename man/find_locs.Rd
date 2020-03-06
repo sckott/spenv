@@ -32,4 +32,3 @@ x <- rnoaa::isd_stations()
 find_locs(x, lat = c(30, 40), lon = c(-120, -120), radius = 50)
 }
 }
-

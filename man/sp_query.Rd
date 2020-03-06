@@ -43,4 +43,3 @@ sp_query(license = "CC0")
 \author{
 Scott Chamberlain
 }
-
