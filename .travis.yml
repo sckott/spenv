@@ -1,24 +1,41 @@
-language: c
-sudo: required
-dist: trusty
-script: "./travis-tool.sh run_tests"
-before_script:
-- sudo apt-get --yes --force-yes update -qq
-- sudo apt-get install -y gdal-bin libgdal-dev libgdal1-dev netcdf-bin libproj-dev
-  libv8-dev libnetcdf-dev
-- curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-- chmod 755 ./travis-tool.sh
-- "./travis-tool.sh bootstrap"
-- "./travis-tool.sh install_deps"
-- "./travis-tool.sh r_install ncdf4"
-after_failure:
-- "./travis-tool.sh dump_logs"
+language: r
+cache: packages
+os: linux
+
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:ubuntugis/ppa'
+    packages:
+    - libudunits2-dev
+    - libv8-dev
+    - libprotobuf-dev
+    - libprotoc-dev
+    - libproj-dev
+    - libgeos-dev
+    - libgdal-dev
+    - protobuf-compiler
+    - valgrind
+    - libpq-dev
+    - netcdf-bin
+
+r_github_packages:
+  - jimhester/covr
+
+after_success:
+  - if [[ "${R_CODECOV}" ]]; then R -e 'covr::codecov()'; fi
+
+jobs:
+  include:
+    - os: linux
+      r: release
+      env: R_CODECOV=true
+    - os: linux
+      r: devel
+
 env:
   global:
   - R_LIBS="http://cran.rstudio.com"
   - R_BUILD_ARGS="--no-build-vignettes --no-manual"
   - R_CHECK_ARGS="--no-build-vignettes --no-manual --as-cran"
   - BOOTSTRAP_LATEX=""
-notifications:
-  slack:
-    secure: jmkwW2oS1vv0Kq7EBeoHOkIx5WDqn94hl7QuEPe307cVFF64l/KrOYG7625GkRR/Nam9C2xANAH+Rb7yPEyO/fmM0BTql5KaAZMCjoFrE89QAwOu032mfr136U2q/DNREHNQEX0VIMHsnxt61NIuo9x5kgtQVQLpNrvCI0OxCyidGy5iUgKparyKyimJFDHz8/gwg4URRoSQ2fyBq3Z5RZckEAWUdEd3Ayj3dbwEEIZHODWZRFg7uXo1EcI22vVjg4C12uZCUOkXAWfYceDRkIG/FxwViLsPDz7xbYAn8cZMNIiRHKtTH6xST8YrBtoJcQxGctN23y2l9fjGU//fte7r1ArmlP+v1I+lR9vbOA0HFAwXEkzKOGgm5hmT9Dce+FOrcK4OEK1B6Mmt2Wc3KvDF0G4jVmwPqOmDWsUdepOybP7weMUDQp+WRjy33NbDDxIm7CTEK9PMaItX1GEtk6r67hyBCnKMuVONE6pG/ihH76xajD+RUBgwKoRLIoKdAyPZlpRv22sAVl0gVpvOeB8+lrCm0d9IYLn7Z5LaanpMGYgjBSrsOJW9uJcEWu7HN2B0JmBbzrktvLF+DhA2Yn0g7sFVHtq++5m7liMN/EXO+L8xtKnpOIbFy9BHgeh6JKjGLBJth0+eviqZTqRZT8DOktSAktG+goaoDZYNDFQ=
