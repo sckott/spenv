@@ -1,13 +1,23 @@
 spenv
 =====
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+[![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 [![Build Status](https://travis-ci.org/ropenscilabs/spenv.svg)](https://travis-ci.org/ropenscilabs/spenv)
 
 `spenv` - add environmental data to spatial data
 
-See the [Wiki](https://github.com/ropenscilabs/spenv/wiki) for some documentation.
+Docs: https://docs.ropensci.org/spenv/
 
-Package API:
+## Package API
 
 * `sp_mutate` - get env data for occ data input - not ready yet
 * `sp_extract_gridded` - extract env gridded data
@@ -15,10 +25,29 @@ Package API:
 * `sp_query` - query for env data - not ready yet
 * `find_locs` - find locations/stations/etc. based on occ data input - internal fxn used in `sp_mutate`
 
+## Data sources
+
+* High priority: There are a set of data sources for environmental data, some of which are high priority as determined by perhaps data quality, coverage, etc. 
+    * temperature, chlorophyll, ...
+* Available in R: Then there are a set of data sources that are already available in R. 
+* We should identify the set of high priority data sources that are not yet available in R, and make them so. 
+
+List of datasources on [Google Sheets](https://docs.google.com/spreadsheets/d/1Ot_HCrsrCJM19cVWz7kSEHipLYd-7WTldJYPDlCCRC4/edit?usp=sharing)
+
+## Use cases
+
+I want data...
+
+* for this bounding box for this temporal range and spatial resolution
+* that is of a certain license, because:
+    * I want only open data, e.g., CC0
+    * I want data I can redistribute
+    * I want data that I can purchase or resell
+
 ## Install
 
 ```{r eval=FALSE}
-devtools::install_github("ropenscilabs/spenv")
+remotes::install_github("ropenscilabs/spenv")
 ```
 
 ```{r}
@@ -60,5 +89,10 @@ Map it
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/spenv/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/handlr/issues).
 * License: MIT
+* Get citation information for `handlr` in R doing `citation(package = 'handlr')`
+* Please note that this project is released with a [Contributor Code of Conduct][coc].
+By participating in this project you agree to abide by its terms.
+
+[coc]: https://github.com/ropenscilabs/spenv/blob/master/CODE_OF_CONDUCT.md
