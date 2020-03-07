@@ -12,7 +12,7 @@ sp_query(variable = NULL, source = NULL)
 \item{source}{Query for a data source}
 }
 \description{
-Explore what data is available
+THIS FUNCTION DOESN'T WORK YET
 }
 \examples{
 \dontrun{

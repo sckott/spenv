@@ -55,10 +55,10 @@ clip_points2 <- function(pt, refdat, orig) {
 }
 
 clean_spdf <- function(x) {
-  df <- x[complete.cases(x$lat, x$lon), ]
-  df <- df[abs(df$lat) <= 90, ]
-  df <- df[abs(df$lon) <= 180, ]
-  df <- df[df$lat != 0, ]
+  df <- x[complete.cases(x$latitude, x$longitude), ]
+  df <- df[abs(df$latitude) <= 90, ]
+  df <- df[abs(df$longitude) <= 180, ]
+  df <- df[df$latitude != 0, ]
   row.names(df) <- NULL
   df
 }

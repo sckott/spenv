@@ -35,7 +35,7 @@ head(dat)
 
 # data.frame input
 res <- sp_extract_pt(x = dat[1:10,], radius = 10)
-dplyr::bind_rows(lapply(res, function(x) x$data))
+dplyr::bind_rows(res)
 
 # spatial objects
 ## SpatialPointsDataFrame - w/ NOAA remote data

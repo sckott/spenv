@@ -11,7 +11,6 @@
 #' env data in \code{from}
 #' @details Works for the use case of finding locations for point based stations,
 #' e.g., floats/buoys type data
-#' @author Scott Chamberlain
 #' @examples \dontrun{
 #' file <- system.file("examples", "obis_mola_mola.csv", package = "spenv")
 #' dat <- read.csv(file, stringsAsFactors = FALSE)
@@ -19,7 +18,7 @@
 #'
 #' # data.frame input
 #' res <- sp_extract_pt(x = dat[1:10,], radius = 10)
-#' dplyr::bind_rows(lapply(res, function(x) x$data))
+#' dplyr::bind_rows(res)
 #'
 #' # spatial objects
 #' ## SpatialPointsDataFrame - w/ NOAA remote data
@@ -38,20 +37,22 @@ sp_extract_pt <- function(x, from = "noaa_isd", radius = 50, select = "first",
 }
 
 #' @export
-sp_extract_pt.default <- function(x, from = "noaa_isd", radius = 50, select = "first",
-                                     date = NULL) {
-  stop("No sp_extract_pt() method for ", class(x), call. = FALSE)
+sp_extract_pt.default <- function(x, from = "noaa_isd", radius = 50,
+  select = "first", date = NULL) {
+
+  stop("No sp_extract_pt() method for ", class(x)[1L], call. = FALSE)
 }
 
 #' @export
-sp_extract_pt.data.frame <- function(x, from = "noaa_isd", radius = 50, select = "first",
-  date = NULL) {
+sp_extract_pt.data.frame <- function(x, from = "noaa_isd", radius = 50,
+  select = "first", date = NULL) {
 
   # toggle different data sources, only noaa isd for now
   switch(from,
      'noaa_isd' = {
        isdstat <- rnoaa::isd_stations()
-       tmp <- find_locs(isdstat, lat = x$latitude, lon = x$longitude, radius = radius)
+       tmp <- find_locs(x=isdstat, lat = x$latitude, lon = x$longitude,
+        radius = radius)
        lapply(tmp, function(x) {
          if (is.null(x)) {
            NULL
@@ -68,17 +69,10 @@ sp_extract_pt.data.frame <- function(x, from = "noaa_isd", radius = 50, select =
 }
 
 #' @export
-sp_extract_pt.SpatialPointsDataFrame <- function(x, from = "noaa_isd", radius = 50, select = "first",
-                                     date = NULL) {
-  x <- data.frame(x)
-  res <- find_locs(x = from, lat = x$latitude, lon = x$longitude, radius = radius)
-  bind_rows(res)
-}
+sp_extract_pt.SpatialPointsDataFrame <- function(x, from = "noaa_isd",
+  radius = 50, select = "first", date = NULL) {
 
-#' @export
-sp_extract_pt.SpatialPointsDataFrame <- function(x, from = "noaa_isd", radius = 50, select = "first",
-                                                 date = NULL) {
   x <- data.frame(x)
-  res <- find_locs(x = from, lat = x$latitude, lon = x$longitude, radius = radius)
+  res <- sp_extract_pt(x, from, radius = radius)
   bind_rows(res)
 }
