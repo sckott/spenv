@@ -28,8 +28,8 @@ http://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html}
 Extract environmental data - gridded data based
 }
 \details{
-Works for the use case of finding locations for point based stations,
-floats/buoys type data
+Works for the use case of finding locations for point based
+stations, floats/buoys type data
 }
 \examples{
 \dontrun{

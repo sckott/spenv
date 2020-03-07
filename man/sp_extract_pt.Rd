@@ -49,6 +49,3 @@ ref <- read.csv(file, stringsAsFactors = FALSE)
 sp_extract_pt(x = dat, from = ref, radius = 10)
 }
 }
-\author{
-Scott Chamberlain
-}

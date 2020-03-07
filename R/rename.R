@@ -7,7 +7,8 @@ revalue <- function (x, replace = NULL, warn_missing = TRUE) {
   if (!is.null(x) && !is.factor(x) && !is.character(x)) {
     stop("x is not a factor or a character vector.")
   }
-  mapvalues(x, from = names(replace), to = replace, warn_missing = warn_missing)
+  mapvalues(x, from = names(replace), to = replace,
+    warn_missing = warn_missing)
 }
 
 mapvalues <- function (x, from, to, warn_missing = TRUE) {

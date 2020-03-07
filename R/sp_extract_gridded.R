@@ -7,8 +7,8 @@
 #' @param latitude Latitude variable name
 #' @param longitude Longitude variable name
 #' @param origin Date origin, Default: 1800-1-1
-#' @details Works for the use case of finding locations for point based stations,
-#' floats/buoys type data
+#' @details Works for the use case of finding locations for point based
+#' stations, floats/buoys type data
 #' @author Tom Webb, Scott Chamberlain
 #' @examples \dontrun{
 #' library("spocc")
@@ -22,7 +22,7 @@
 #' sp_extract_gridded(res_df, latitude = "latitude", longitude = "mylong")
 #' }
 sp_extract_gridded <- function(x, from = "noaa_sst", latitude = NULL,
-                               longitude = NULL, origin = as.Date("1800-1-1")) {
+  longitude = NULL, origin = as.Date("1800-1-1")) {
 
   x <- spenv_guess_latlon(x, latitude, longitude)
   switch(from,
@@ -47,7 +47,8 @@ sst_prep <- function(path = "~/.spenv/noaa_sst") {
   x <- file.path(path, "sst.mnmean.nc")
   if (!file.exists(x)) {
     dir.create(dirname(x), recursive = TRUE, showWarnings = FALSE)
-    download.file("ftp://ftp.cdc.noaa.gov/Datasets/noaa.oisst.v2/sst.mnmean.nc", destfile = x)
+    download.file("ftp://ftp.cdc.noaa.gov/Datasets/noaa.oisst.v2/sst.mnmean.nc",
+      destfile = x)
   }
   raster::brick(x, varname = "sst")
 }
