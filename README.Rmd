@@ -11,11 +11,11 @@ knitr::opts_chunk$set(
 ```
 
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
-[![Build Status](https://travis-ci.org/ropenscilabs/spenv.svg)](https://travis-ci.org/ropenscilabs/spenv)
+[![Build Status](https://travis-ci.org/sckott/spenv.svg)](https://travis-ci.org/sckott/spenv)
 
 `spenv` - add environmental data to spatial data
 
-Docs: https://docs.ropensci.org/spenv/
+Docs: https://sckott.github.io/spenv/
 
 ## Package API
 
@@ -47,7 +47,7 @@ I want data...
 ## Install
 
 ```{r eval=FALSE}
-remotes::install_github("ropenscilabs/spenv")
+remotes::install_github("sckott/spenv")
 ```
 
 ```{r}
@@ -89,10 +89,10 @@ Map it
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropensci/handlr/issues).
+* Please [report any issues or bugs](https://github.com/sckott/spenv/issues).
 * License: MIT
-* Get citation information for `handlr` in R doing `citation(package = 'handlr')`
+* Get citation information for `spenv` in R doing `citation(package = 'spenv')`
 * Please note that this project is released with a [Contributor Code of Conduct][coc].
 By participating in this project you agree to abide by its terms.
 
-[coc]: https://github.com/ropenscilabs/spenv/blob/master/CODE_OF_CONDUCT.md
+[coc]: https://github.com/sckott/spenv/blob/master/CODE_OF_CONDUCT.md

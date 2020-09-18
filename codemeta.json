@@ -1,26 +1,29 @@
 {
-  "@context": ["http://purl.org/codemeta/2.0", "http://schema.org"],
+  "@context": [
+    "http://purl.org/codemeta/2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "spenv",
-  "description": "Add Environmental Data to Spatial Data. Stuff.",
+  "description": "Add Environmental Data to Spatial Data.",
   "name": "spenv: Add Environmental Data to Spatial Data",
-  "codeRepository": "https://github.com/ropenscilabs/spenv",
-  "issueTracker": "https://github.com/ropenscilabs/spenv/issues",
+  "codeRepository": "https://github.com/sckott/spenv",
+  "issueTracker": "https://github.com/sckott/spenv/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.0.2.9830",
+  "version": "0.0.3.91",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.4.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.4.3 Patched (2018-01-01 r74017)",
+  "runtimePlatform": "R version 4.0.2 Patched (2020-09-01 r79114)",
   "author": [
     {
       "@type": "Person",
       "givenName": "Scott",
       "familyName": "Chamberlain",
-      "email": "myrmecocystus@gmail.com"
+      "email": "myrmecocystus@gmail.com",
+      "@id": "https://orcid.org/0000-0003-1444-9135"
     },
     {
       "@type": "Person",
@@ -33,12 +36,15 @@
       "familyName": "Bosch"
     }
   ],
-  "maintainer": {
-    "@type": "Person",
-    "givenName": "Scott",
-    "familyName": "Chamberlain",
-    "email": "myrmecocystus@gmail.com"
-  },
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Scott",
+      "familyName": "Chamberlain",
+      "email": "myrmecocystus@gmail.com",
+      "@id": "https://orcid.org/0000-0003-1444-9135"
+    }
+  ],
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
@@ -47,9 +53,10 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
   "softwareRequirements": [
@@ -75,9 +82,10 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rnoaa"
     },
     {
       "@type": "SoftwareApplication",
@@ -86,9 +94,10 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=sp"
     },
     {
       "@type": "SoftwareApplication",
@@ -97,9 +106,10 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rgeos"
     },
     {
       "@type": "SoftwareApplication",
@@ -108,9 +118,10 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=lubridate"
     },
     {
       "@type": "SoftwareApplication",
@@ -119,9 +130,10 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=raster"
     },
     {
       "@type": "SoftwareApplication",
@@ -130,12 +142,19 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=dplyr"
     }
   ],
-  "contIntegration": "https://travis-ci.org/ropenscilabs/spenv",
-  "readme": "https://github.com/ropenscilabs/spenv/blob/master/README.md",
-  "fileSize": "14.103KB"
+  "contIntegration": "https://travis-ci.org/sckott/spenv",
+  "readme": "https://github.com/sckott/spenv/blob/master/README.md",
+  "fileSize": "0KB",
+  "relatedLink": "https://sckott.github.io/spenv/",
+  "contributor": {},
+  "copyrightHolder": {},
+  "funder": {},
+  "developmentStatus": "https://www.repostatus.org/#concept",
+  "keywords": ["rstats", "r", "r-package"]
 }

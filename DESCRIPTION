@@ -10,8 +10,9 @@ Authors@R: c(
     ),
     person("Tom", "Webb", role = "aut"),
     person("Samuel", "Bosch", role = "aut"))
-URL: https://github.com/ropenscilabs/spenv
-BugReports: https://github.com/ropenscilabs/spenv/issues
+URL: https://github.com/sckott/spenv
+    https://sckott.github.io/spenv/
+BugReports: https://github.com/sckott/spenv/issues
 Encoding: UTF-8
 Language: en-US
 Imports:

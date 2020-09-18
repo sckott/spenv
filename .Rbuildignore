@@ -5,3 +5,4 @@
 inst/examples/sst.mnmean.nc
 ^codemeta\.json$
 ^Makefile$
+.github
