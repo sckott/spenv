@@ -5,7 +5,4 @@
 \alias{spenv-package}
 \alias{spenv}
 \title{Spatial data to environmental data extractor}
-\description{
-Spatial data to environmental data extractor
-}
 \keyword{package}
